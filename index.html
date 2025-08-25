@@ -13,11 +13,25 @@
         }
 
         body {
-            font-family: 'Merriweather', serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #06192a 0%, #0a2a42 100%);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #a0aec0; /* Cinza para texto secundário */
+            background-color: #06192a; /* Azul Petróleo */
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230A243D' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
             min-height: 100vh;
+        }
+        
+        .top-left-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .top-left-logo img {
+            width: 100px; /* Tamanho ajustado para pequeno */
+            filter: drop-shadow(0 0 8px rgba(0, 232, 0, 0.4));
         }
 
         .container {
@@ -26,51 +40,54 @@
             padding: 20px;
         }
 
-        .header {
-            background: rgba(255, 255, 255, 0.95);
+        .card {
+            background: #0A243D; /* Azul Escuro para Cards */
             border-radius: 20px;
             padding: 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 232, 0, 0.1);
         }
 
-        .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 20px;
+        .header {
+            padding: 20px;
+            margin-top: 60px; /* Space for the fixed logo */
+            text-align: center;
         }
 
         .header h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            color: #06192a;
+            font-size: 2.2rem;
+            color: #ffffff;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
         .client-info {
-            background: rgba(0, 232, 0, 0.1);
-            border: 2px solid #00e800;
+            background: rgba(0, 232, 0, 0.05);
+            border: 1px solid #00e800;
             border-radius: 15px;
-            padding: 20px;
+            padding: 15px;
             margin-top: 20px;
+            text-align: left;
         }
 
         .client-info h3 {
             font-family: 'Poppins', sans-serif;
-            color: #06192a;
-            margin-bottom: 15px;
+            color: #00e800;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .client-info p {
+            color: #a0aec0;
         }
 
         .tabs {
             display: flex;
-            background: rgba(255, 255, 255, 0.1);
+            background: #0A243D;
             border-radius: 15px;
             padding: 10px;
             margin-bottom: 20px;
-            backdrop-filter: blur(10px);
         }
 
         .tab-button {
@@ -94,18 +111,11 @@
             box-shadow: 0 5px 15px rgba(0, 232, 0, 0.3);
         }
 
-        .tab-button:hover {
-            background: rgba(0, 232, 0, 0.2);
-            transform: translateY(-1px);
+        .tab-button:hover:not(.active) {
+            background: rgba(0, 232, 0, 0.1);
         }
 
         .tab-content {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
             display: none;
         }
 
@@ -121,18 +131,23 @@
 
         .tab-content h2 {
             font-family: 'Poppins', sans-serif;
-            color: #06192a;
+            color: #ffffff;
             font-size: 2rem;
             margin-bottom: 20px;
             border-bottom: 3px solid #00e800;
             padding-bottom: 10px;
+            text-shadow: 0 0 8px rgba(0, 232, 0, 0.7);
         }
 
         .tab-content h3 {
             font-family: 'Poppins', sans-serif;
-            color: #06192a;
+            color: #00e800;
             font-size: 1.5rem;
             margin: 25px 0 15px 0;
+        }
+        
+        #diagnostico-tab p, #diagnostico-tab h3, #diagnostico-tab h4, #diagnostico-tab small {
+             font-family: 'Merriweather', serif;
         }
         
         ul {
@@ -151,7 +166,7 @@
         }
 
         .action-item {
-            background: rgba(6, 25, 42, 0.05);
+            background: rgba(6, 25, 42, 0.5);
             border-left: 4px solid #00e800;
             padding: 20px;
             margin: 15px 0;
@@ -160,13 +175,13 @@
         }
 
         .action-item:hover {
-            background: rgba(6, 25, 42, 0.1);
+            background: rgba(0, 232, 0, 0.1);
             transform: translateX(5px);
         }
 
         .action-item h4 {
             font-family: 'Poppins', sans-serif;
-            color: #06192a;
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
@@ -176,7 +191,7 @@
             color: #00e800;
             text-align: center;
             margin: 30px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 0 15px rgba(0, 232, 0, 0.7);
         }
 
         .btn-contract {
@@ -200,7 +215,7 @@
         }
 
         .contract-summary {
-            background: rgba(6, 25, 42, 0.05);
+            background: rgba(6, 25, 42, 0.5);
             border-radius: 15px;
             padding: 25px;
             margin-top: 20px;
@@ -213,7 +228,7 @@
 
         .contract-summary li {
             padding: 10px 0;
-            border-bottom: 1px solid rgba(6, 25, 42, 0.1);
+            border-bottom: 1px solid rgba(0, 232, 0, 0.1);
         }
 
         .contract-summary li:last-child {
@@ -222,7 +237,7 @@
 
         .footer {
             text-align: center;
-            color: white;
+            color: #a0aec0;
             margin-top: 40px;
             padding: 20px;
         }
@@ -246,6 +261,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .quick-wins {
@@ -254,18 +270,20 @@
         }
 
         .projects {
-            background: linear-gradient(135deg, #06192a, #0a2a42);
+            background: rgba(6, 25, 42, 0.8);
             color: white;
+            border-color: #00e800;
         }
 
         .improvements {
-            background: linear-gradient(135deg, #f0f8f0, #e8f5e8);
-            color: #06192a;
+            background: rgba(255, 255, 255, 0.05);
+            color: #a0aec0;
         }
 
         .distractions {
-            background: linear-gradient(135deg, #ffebee, #ffcdd2);
-            color: #d32f2f;
+            background: rgba(211, 47, 47, 0.1);
+            color: #ffcdd2;
+            border-color: rgba(211, 47, 47, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -284,13 +302,23 @@
             .matrix-visual {
                 grid-template-columns: 1fr;
             }
+            .top-left-logo {
+                top: 10px;
+                left: 10px;
+            }
+            .top-left-logo img {
+                width: 80px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="top-left-logo">
+        <img src="https://raw.githubusercontent.com/Clebito2/CasaDibs/main/Logo%20live%20oficial-21.png" alt="Live Consultoria">
+    </div>
+
     <div class="container">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/Clebito2/CasaDibs/main/Logo%20live%20oficial_Prancheta%201%20c%C3%B3pia%204.png" alt="Live Consultoria" class="logo">
+        <div class="header card">
             <h1>Proposta de Consultoria Estratégica</h1>
             
             <div class="client-info">
@@ -307,7 +335,7 @@
             <button class="tab-button" onclick="showTab('contrato')">📋 Contrato</button>
         </div>
 
-        <div id="diagnostico-tab" class="tab-content active">
+        <div id="diagnostico-tab" class="tab-content card active">
             <h2>📊 Diagnóstico Estratégico</h2>
             
             <div class="highlight-box">
@@ -343,7 +371,7 @@
             <p>A estratégia central é a **estabilização e otimização** da estrutura atual. Iniciaremos com ações de alto impacto em RH e governança para, em paralelo, desenvolver novas unidades de negócio (Eventos) e fortalecer o controle financeiro e operacional. O foco é criar uma base sólida antes de qualquer plano de expansão.</p>
         </div>
 
-        <div id="plano-tab" class="tab-content">
+        <div id="plano-tab" class="tab-content card">
             <h2>🎯 Plano de Ação Estratégico</h2>
             
             <h3> Fase 1: Reestruturação Organizacional e de Equipes</h3>
@@ -405,13 +433,13 @@
             </div>
         </div>
 
-        <div id="investimento-tab" class="tab-content">
+        <div id="investimento-tab" class="tab-content card">
             <h2>💰 Estrutura de Investimento</h2>
             
             <div class="price-highlight">
                 R$ 98.000,00
             </div>
-            <p style="text-align: center; font-size: 1.2rem; color: #06192a; margin-bottom: 30px;">
+            <p style="text-align: center; font-size: 1.2rem; color: #a0aec0; margin-bottom: 30px;">
                 <em>Noventa e oito mil reais</em>
             </p>
 
@@ -456,7 +484,7 @@
             </div>
         </div>
 
-        <div id="contrato-tab" class="tab-content">
+        <div id="contrato-tab" class="tab-content card">
             <h2>📋 Contrato de Prestação de Serviços</h2>
             <p>Contrato completo pronto para assinatura digital ou física.</p>
 
@@ -513,21 +541,6 @@
             // Add active class to clicked button
             event.target.classList.add('active');
         }
-
-        // Add smooth scrolling and animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add entrance animation to elements
-            const elements = document.querySelectorAll('.action-item, .highlight-box');
-            elements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    element.style.transition = 'all 0.6s ease';
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        });
     </script>
 </body>
 </html>
